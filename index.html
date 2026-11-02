@@ -30,7 +30,7 @@
 <div class="format-step" id="formatStep"><strong>1 · Elige primero el formato</strong>
 <label>Formato<select id="format"><option value="square">Cuadrado</option><option value="portrait">Vertical</option><option value="landscape">Horizontal</option></select></label><p class="small" id="formatHelp">Una vez que empieces a diseñar, el formato quedará fijo para que nada se descoloque.</p>
 <div class="actions"><button id="startDesign" class="primary" type="button">Empezar postal con este formato</button><button id="changeFormat" class="hidden" type="button">Cambiar formato y reiniciar</button></div></div>
-<div id="designTools" class="hidden"><h3>2 · Personaliza tu postal</h3><label>Celebración<select id="occasion"><option>Cumpleaños</option><option>Navidad</option><option>Aniversario</option><option>Amor y amistad</option><option>Día de la Madre</option><option>Gracias</option><option>Día del Padre</option><option>Comunión</option><option>Bautizo</option><option>Boda</option><option>Nacimiento</option><option>Graduación</option><option>Jubilación</option><option>Santo</option><option>Gracias</option><option>Ánimo y recuperación</option><option>Viajes y París</option><option>Infantil y kawaii</option><option>Felicitación especial</option><option>Bienvenida</option><option>Despedida</option><option>Ascenso laboral</option><option>Nuevo hogar</option><option>Halloween</option><option>Pascua</option><option>Reyes Magos</option><option>Fin de curso</option><option>Viaje inolvidable</option></select></label><label>Plantilla premium<select id="style"><option value="floral">🌸 Floral de acuarela</option><option value="paris">🗼 París romántico</option><option value="kawaii">🎀 Dulce kawaii</option><option value="luxury">✨ Lujo dorado</option><option value="color">🎂 Fiesta de cumpleaños</option><option value="christmas">🎄 Navidad mágica</option><option value="wedding">💍 Boda romántica</option><option value="baby">🧸 Infantil dulce</option></select></label><label>Título principal (completamente editable)<input id="heading" maxlength="100" placeholder="Por ejemplo: ¡Felicidades!"></label><label>¿Para quién es?<input id="name" maxlength="45" placeholder="Nombre de la persona"></label><label>Dedicatoria<textarea id="message" maxlength="300"></textarea></label><div class="actions"><button id="suggest">✨ Proponer mensaje</button><button id="addText">＋ Añadir texto libre</button></div><label>Tu firma<input id="sign" maxlength="55"></label><div class="two"><div><label>Tipografía<select id="font"><option value="elegant">Elegante</option><option value="modern">Moderna</option><option value="italic">Cursiva</option></select></label></div><div><label>Color del texto<input type="color" id="ink" value="#674d5c"></label></div></div><label>Tamaño de título<input type="range" id="headingSize" min="24" max="95" value="62"></label><label>Añadir fotografía familiar<input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><div class="actions"><button id="removePhoto">Quitar fotografía</button></div><h3>🎨 Elementos decorativos</h3><label>Elige una categoría<select id="decoCategory"></select></label><div id="stickerGrid" class="stickerGrid"></div><p class="small">Pulsa un elemento para añadirlo. Después arrástralo en la postal, selecciónalo para cambiar tamaño o eliminarlo.</p><div class="actions"><button id="bigger">＋ Ampliar</button><button id="smaller">− Reducir</button><button id="deleteSticker">🗑 Quitar seleccionado</button><button id="front">↑ Traer delante</button></div><h3>Tu postal está lista</h3><div class="actions"><button id="png" class="primary">⬇ Descargar PNG</button><button id="jpg">JPG</button><button id="save">❤️ Guardar</button><button id="print">🖨 Imprimir / PDF</button><button id="new">Nueva postal</button></div><div class="info">Tus fotografías y postales se guardan en este navegador, no en GitHub. Haz copias de seguridad periódicas en «Mis postales».</div></div></section>
+<div id="designTools" class="hidden"><h3>2 · Personaliza tu postal</h3><label>Celebración<select id="occasion"><option>Cumpleaños</option><option>Navidad</option><option>Aniversario</option><option>Amor y amistad</option><option>Día de la Madre</option><option>Gracias</option><option>Día del Padre</option><option>Comunión</option><option>Bautizo</option><option>Boda</option><option>Nacimiento</option><option>Graduación</option><option>Jubilación</option><option>Santo</option><option>Gracias</option><option>Ánimo y recuperación</option><option>Viajes y París</option><option>Infantil y kawaii</option><option>Felicitación especial</option><option>Bienvenida</option><option>Despedida</option><option>Ascenso laboral</option><option>Nuevo hogar</option><option>Halloween</option><option>Pascua</option><option>Reyes Magos</option><option>Fin de curso</option><option>Viaje inolvidable</option></select></label><label>Plantilla premium<select id="style"><option value="floral">🌸 Floral de acuarela</option><option value="paris">🗼 París romántico</option><option value="kawaii">🎀 Dulce kawaii</option><option value="luxury">✨ Lujo dorado</option><option value="color">🎂 Fiesta de cumpleaños</option><option value="christmas">🎄 Navidad mágica</option><option value="wedding">💍 Boda romántica</option><option value="baby">🧸 Infantil dulce</option><option value="roses">🌹 Jardín de rosas</option><option value="lavender">💜 Campos de lavanda</option><option value="sakura">🌸 Primavera japonesa</option><option value="sunflower">🌻 Girasoles</option><option value="boho">🍂 Boho tierra</option><option value="tropical">🌴 Paraíso tropical</option><option value="sea">🐚 Mar mediterráneo</option><option value="sunset">🌅 Atardecer romántico</option><option value="galaxy">🌌 Galaxia estrellada</option><option value="moon">🌙 Luna y estrellas</option><option value="artdeco">💎 Art déco</option><option value="champagne">🥂 Champán y perlas</option><option value="rainbow">🌈 Arcoíris pastel</option><option value="balloons">🎈 Globos de fiesta</option><option value="butterfly">🦋 Mariposas delicadas</option><option value="vintage">📜 Vintage clásico</option></select></label><label>Título principal (completamente editable)<input id="heading" maxlength="100" placeholder="Por ejemplo: ¡Felicidades!"></label><label>¿Para quién es?<input id="name" maxlength="45" placeholder="Nombre de la persona"></label><label>Dedicatoria<textarea id="message" maxlength="300"></textarea></label><div class="actions"><button id="suggest">✨ Proponer mensaje</button><button id="addText">＋ Añadir texto libre</button></div><label>Tu firma<input id="sign" maxlength="55"></label><div class="two"><div><label>Tipografía<select id="font"><option value="elegant">Elegante</option><option value="modern">Moderna</option><option value="italic">Cursiva</option></select></label></div><div><label>Color del texto<input type="color" id="ink" value="#674d5c"></label></div></div><label>Tamaño de título<input type="range" id="headingSize" min="24" max="95" value="62"></label><label>Añadir fotografía familiar<input id="photo" type="file" accept="image/jpeg,image/png,image/webp"></label><div class="actions"><button id="removePhoto">Quitar fotografía</button></div><h3>🎨 Elementos decorativos</h3><label>Elige una categoría<select id="decoCategory"></select></label><div id="stickerGrid" class="stickerGrid"></div><p class="small">Pulsa un elemento para añadirlo. Después arrástralo en la postal, selecciónalo para cambiar tamaño o eliminarlo.</p><div class="actions"><button id="bigger">＋ Ampliar</button><button id="smaller">− Reducir</button><button id="deleteSticker">🗑 Quitar seleccionado</button><button id="front">↑ Traer delante</button></div><h3>Tu postal está lista</h3><div class="actions"><button id="png" class="primary">⬇ Descargar PNG</button><button id="jpg">JPG</button><button id="save">❤️ Guardar</button><button id="print">🖨 Imprimir / PDF</button><button id="new">Nueva postal</button></div><div class="info">Tus fotografías y postales se guardan en este navegador, no en GitHub. Haz copias de seguridad periódicas en «Mis postales».</div></div></section>
 <section id="studio" class="panel"><h2>Vista previa de tu postal</h2><p class="small" id="combinationLabel" aria-live="polite">Celebración y estilo seleccionados</p><p class="small">Vista ajustada para mostrar la postal entera, desde el borde superior hasta la firma.</p><div class="stage"><canvas id="canvas" width="900" height="900" aria-label="Vista previa de postal"></canvas></div><p class="small">Exportación premium a 4×: PNG sin pérdida y JPG con calidad máxima. El menú izquierdo y la vista de la postal se desplazan por separado en ordenador.</p></section>
 <section id="library" class="panel hidden"><h2>Mis postales ❤️</h2><p class="small">Tu colección guardada en este dispositivo.</p><div class="actions"><button id="backup">Exportar copia de seguridad</button><label class="filebtn">Importar copia<input id="restore" type="file" accept="application/json" class="hidden"></label></div><div id="saved"></div></section>
 <section id="guide" class="panel hidden"><h2>📖 Manuales del Rincón de Mercedes</h2>
@@ -62,7 +62,23 @@ const ART={
  color:{bg:'#fff5e3',ink:'#715274',main:'#f18d9f',soft:'#9cc9dd',gold:'#f3bd59',kind:'party'},
  christmas:{bg:'#163b37',ink:'#fff5de',main:'#d7b77b',soft:'#407a65',gold:'#efd39a',kind:'christmas'},
  wedding:{bg:'#fcf7f2',ink:'#785c60',main:'#b898a0',soft:'#e8d9cf',gold:'#c7aa78',kind:'wedding'},
- baby:{bg:'#f5f5fc',ink:'#707393',main:'#a8bde0',soft:'#f2c8db',gold:'#e8c391',kind:'baby'}
+ baby:{bg:'#f5f5fc',ink:'#707393',main:'#a8bde0',soft:'#f2c8db',gold:'#e8c391',kind:'baby'},
+ roses:{bg:'#fff2f1',ink:'#824b5a',main:'#c36578',soft:'#eeb1bd',gold:'#c39a71',kind:'botanical'},
+ lavender:{bg:'#f7f1ff',ink:'#62517c',main:'#9b7eba',soft:'#d7c8eb',gold:'#b8a076',kind:'botanical'},
+ sakura:{bg:'#fff6f8',ink:'#85616f',main:'#d78da9',soft:'#f2cada',gold:'#bba591',kind:'botanical'},
+ sunflower:{bg:'#fff9e9',ink:'#725a36',main:'#c99632',soft:'#f0d47b',gold:'#9eae72',kind:'botanical'},
+ boho:{bg:'#fcf2e7',ink:'#725846',main:'#b98268',soft:'#eac09f',gold:'#9a9f75',kind:'geometry'},
+ tropical:{bg:'#eef9ed',ink:'#426e64',main:'#5aa88f',soft:'#b7deaf',gold:'#edba76',kind:'nature'},
+ sea:{bg:'#edf9fb',ink:'#456c7e',main:'#70afc4',soft:'#c5e4e7',gold:'#dbbb85',kind:'waves'},
+ sunset:{bg:'#fff1e5',ink:'#89556b',main:'#dc8b7c',soft:'#f0c2a5',gold:'#d5a16b',kind:'waves'},
+ galaxy:{bg:'#192343',ink:'#f9eddb',main:'#8c83c5',soft:'#52639a',gold:'#ecd79b',kind:'stars'},
+ moon:{bg:'#242a49',ink:'#fff2d6',main:'#b5a3ce',soft:'#48567a',gold:'#eed799',kind:'stars'},
+ artdeco:{bg:'#1e4048',ink:'#f9e9c7',main:'#d1ac69',soft:'#4c7a7a',gold:'#ecd393',kind:'geometry'},
+ champagne:{bg:'#fff9f0',ink:'#8a7065',main:'#c0a086',soft:'#ebded0',gold:'#d4bb93',kind:'geometry'},
+ rainbow:{bg:'#fff7f7',ink:'#7d638c',main:'#a9a5db',soft:'#efd0de',gold:'#dbb36d',kind:'rainbow'},
+ balloons:{bg:'#fff8ef',ink:'#855c7b',main:'#d986ac',soft:'#b6d9e4',gold:'#f2bf78',kind:'party'},
+ butterfly:{bg:'#f5f9f5',ink:'#6c6885',main:'#afa4d1',soft:'#d6e9d1',gold:'#c9ab77',kind:'nature'},
+ vintage:{bg:'#f7eedf',ink:'#725c4b',main:'#ad8969',soft:'#d8bea3',gold:'#b8a47b',kind:'geometry'}
 };
 const FONT={serif:'Georgia,serif',sans:'Arial,sans-serif',script:'Georgia,serif'};
 function draw(scale=1){
@@ -119,6 +135,39 @@ function draw(scale=1){
  }else if(type==='christmas'){
    for(let j=0;j<20;j++){let x=margin+j*59%(w-2*margin),y=margin+j*83%(h-2*margin);sparkle(x,y,6+j%4,theme.gold)}
    corners((x,y)=>{star(x,y,19,theme.gold);leaf(x+15,y+20,11,28,.5,theme.soft)});
+ }
+
+ // Premium collection artwork is kept in edge regions so photos and text remain readable.
+ if(['roses','lavender','sakura','sunflower'].includes(type)){
+   const r=type==='sunflower'?35:22;
+   corners((x,y,dir)=>{for(let j=0;j<3;j++){let xx=x+dir*j*23,yy=y+dir*j*18;
+     flower(xx,yy,r-(j%2)*7,j%2?theme.soft:theme.main);
+     leaf(xx+dir*17,yy-dir*24,9,17,dir*.6,'#a6b49a')
+   }});
+ }else if(['boho','artdeco','champagne','vintage'].includes(type)){
+   const muted=type==='artdeco'?theme.gold:theme.main;
+   stroke(frame+24,frame+24,w-2*(frame+24),h-2*(frame+24),muted,type==='artdeco'?3:1.5,14);
+   corners((x,y,dir)=>{star(x,y,14,theme.gold);for(let k=1;k<4;k++)line(x,y,x+dir*k*12,y+dir*k*7,theme.main,2)});
+ }else if(['tropical','butterfly'].includes(type)){
+   corners((x,y,dir)=>{for(let k=0;k<4;k++){let xx=x+dir*k*17,yy=y+dir*k*15;
+     leaf(xx,yy,12,28,(dir>0?1:-1)*(.3+k*.2),theme.main);
+     if(type==='butterfly'&&k%2===0){heart(xx+dir*12,yy,17,theme.soft);sparkle(xx+dir*22,yy+18,8,theme.gold)}
+   }});
+ }else if(['sea','sunset','rainbow'].includes(type)){
+   for(let j=0;j<5;j++){const rr=22+j*11;
+     c.strokeStyle=j%2?theme.soft:theme.main;c.lineWidth=3;c.beginPath();
+     c.arc(margin*.75,h-margin*.8,rr,Math.PI,2*Math.PI);c.stroke();
+     c.beginPath();c.arc(w-margin*.75,margin*.8,rr,0,Math.PI);c.stroke()
+   }
+ }else if(['galaxy','moon'].includes(type)){
+   for(let j=0;j<30;j++){let xx=margin+(j*79)%(w-2*margin),yy=margin+(j*107)%(h-2*margin);
+     if(xx>w*.23&&xx<w*.77&&yy>h*.18&&yy<h*.88)continue;
+     if(j%3===0)star(xx,yy,4+j%5,theme.gold);else sparkle(xx,yy,3+j%4,theme.soft)
+   }
+   if(type==='moon'){circle(w-margin*1.2,margin*1.2,28,theme.gold,.9);circle(w-margin*1.2+11,margin*1.2-6,25,theme.bg)}
+ }else if(type==='balloons'){
+   for(let j=0;j<5;j++){balloon(margin*.8+j*33,margin*.9+(j%2)*20,12+j%2*5,j%2?theme.soft:theme.main);
+     balloon(w-margin*.8-j*33,h-margin*.9-(j%2)*20,12+j%2*5,j%2?theme.gold:theme.main)}
  }
  const hasPhoto=!!image;
  // Explicit layout zones in the three aspect ratios. Never put content over photo.
