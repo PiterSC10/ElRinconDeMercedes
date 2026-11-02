@@ -81,11 +81,18 @@ const ART={
  vintage:{bg:'#f7eedf',ink:'#725c4b',main:'#ad8969',soft:'#d8bea3',gold:'#b8a47b',kind:'geometry'}
 };
 const FONT={serif:'Georgia,serif',sans:'Arial,sans-serif',script:'Georgia,serif'};
-function draw(scale=1){
+// A single animation-frame redraw protects sliders, typing and sticker movement.
+let pendingRender=0;
+function draw(){if(pendingRender)return;pendingRender=window.requestAnimationFrame(()=>{pendingRender=0;renderCard(1)})}
+function renderCard(scale=1){
  const fmt=$('format').value,land=fmt==='landscape',vert=fmt==='portrait';
  const w=land?1200:vert?800:900,h=land?720:vert?1100:900;
  // The preview only uses logical coordinates; 4x output receives exact same layout.
- cv.width=w*scale;cv.height=h*scale;c.setTransform(scale,0,0,scale,0,0);
+ // Allocate only when dimensions actually change to reduce allocation and GC stutters.
+ const cw=w*scale,ch=h*scale;
+ if(cv.width!==cw)cv.width=cw;
+ if(cv.height!==ch)cv.height=ch;
+ c.setTransform(scale,0,0,scale,0,0);c.clearRect(0,0,w,h);
  // Explicit CSS sizing prevents natural canvas dimensions (especially 1100px vertical)
  // from being centered and clipped in the independently scrollable preview.
  const stage=cv.parentElement;
@@ -95,8 +102,9 @@ function draw(scale=1){
    const freeW=Math.max(150,bounds.width-28);
    const freeH=desktop?Math.max(160,bounds.height-28):Math.max(180,Math.min(window.innerHeight?window.innerHeight*.68:600,740));
    const fitted=Math.min(freeW/w,freeH/h,1);
-   cv.style.width=Math.max(100,Math.floor(w*fitted))+'px';
-   cv.style.height=Math.max(100,Math.floor(h*fitted))+'px';
+   const pxW=Math.max(100,Math.floor(w*fitted))+'px',pxH=Math.max(100,Math.floor(h*fitted))+'px';
+   if(cv.style.width!==pxW)cv.style.width=pxW;
+   if(cv.style.height!==pxH)cv.style.height=pxH;
  }
  const type=$('style').value,theme=ART[type]||ART.floral;
  const short=Math.min(w,h),margin=Math.round(short*.065);
@@ -229,7 +237,7 @@ function draw(scale=1){
   c.restore();
  });
 }
-fields.forEach(id=>$(id).addEventListener('input',draw));$('style').addEventListener('change',()=>{selected=-1;draw()});
+fields.forEach(id=>$(id).addEventListener('input',()=>draw()));$('style').addEventListener('change',()=>{selected=-1;draw()});
 const stickers={
 '🎂 Cumpleaños':['🎂','🎉','🎈','🎁','🧁','🍰','🕯️','🥳','🎊','🎀','🍬','🍭','🥂','🎵','⭐'],
 '🗼 París':['🗼','🇫🇷','🥐','🥖','☕','🚲','🧳','💌','🌹','🗺️','🥂','💗','🛍️','🪄'],
@@ -272,7 +280,7 @@ $('occasion').onchange=()=>{const m={'Cumpleaños':'Que disfrutes de un día lle
 $('suggest').onclick=()=>{let a=['Que todos tus sueños encuentren su camino y que nunca te falten motivos para sonreír.','Hay personas que hacen cada día más bonito. Tú eres una de ellas.','Un abrazo enorme y los mejores deseos para hoy y siempre.'];$('message').value=a[Math.floor(Math.random()*a.length)];draw()};
 function download(type){let previous=selected;selected=-1;try{
  // Redibujar todos los textos, vectores, fotos y stickers a 4×, sin interpolar la vista previa.
- draw(4);
+ if(pendingRender){window.cancelAnimationFrame(pendingRender);pendingRender=0}renderCard(4);
  const mime=type==='image/jpeg'?'image/jpeg':'image/png';
  let url=cv.toDataURL(mime,1);
  if(url==='data:,')throw Error('El dispositivo no admite este tamaño de exportación');
